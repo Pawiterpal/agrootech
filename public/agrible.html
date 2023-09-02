@@ -10,6 +10,12 @@
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -159,9 +165,9 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 column mt-lg-0 mt-4 ps-xl-5">
                         <h3>Subscribe</h3>
-                        <form action="#" class="subscribe d-flex" method="post">
+                        <form class="subscribe d-flex" id="subscribeform">
                             <input type="email" name="email" placeholder="Email Address" required="">
-                            <button class="button-style"><span class="fa fa-paper-plane"
+                            <button class="button-style" onclick="submitSubscribe(event)"><span class="fa fa-paper-plane"
                                     aria-hidden="true"></span></button>
                         </form>
                         <p class="mt-4">Subscribe to our mailing list and get updates to your email inbox.</p>
@@ -197,6 +203,32 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+        function submitSubscribe(event) {
+
+event.preventDefault();
+var form = document.getElementById('subscribeform');
+
+// Simple form validation
+if (!form.checkValidity()) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fill out all required fields correctly.',
+    });
+    return;
+}
+
+// Assuming the form data is valid, you would send it to your server here using AJAX or another method
+// For this example, we're just showing a success alert
+Swal.fire({
+    icon: 'success',
+    title: 'Success!',
+    text: 'You have successfully subscribed.',
+});
+form.reset();
+// Optionally, you can reset the form after submission
+// form.reset();
+}
     </script>
     <!-- //move top -->
 
