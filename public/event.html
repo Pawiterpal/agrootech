@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AgroTech: Agri-tech and Blockchain: Ensuring Transparency from Farm to Table</title>
+    <title>AgroTech: Unleashing Digital Solutions for Agricultural Advancement</title>
     <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
@@ -16,6 +16,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src='assets/index.global.js'></script>
+<style>
+    body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+</style>
 </head>
 
 <body>
@@ -35,7 +49,7 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="casestudy.html">Case Study</a>
@@ -76,7 +90,7 @@
     <section class="inner-banner py-5">
         <div class="w3l-breadcrumb py-lg-5">
             <div class="container pt-5 pb-sm-4 pb-2">
-                <h4 class="inner-text-title font-weight-bold pt-5">News and Trending</h4>
+                <h4 class="inner-text-title font-weight-bold pt-5">Event Calender</h4>
 
             </div>
         </div>
@@ -91,28 +105,15 @@
         <div class="container pb-lg-5 pb-md-4 pb-2">
             <div class="row mb-md-5 mb-4">
                 <div class="col-md-10 col-lg-7 mx-auto text-center px-xl-4">
-                    <h5 class="sub-title text-center">Latest News</h5>
-                    <h3 class="title-style text-center"> Agri-tech and Blockchain: Ensuring Transparency from Farm to Table</h3>
+                    <h5 class="sub-title text-center">Courses</h5>
+                    <h3 class="title-style text-center">The economics of agro-food value chains</h3>
                 </div>
             </div>
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-12 col-md-12">
-
-<p>
-    With the rise of technology in agriculture, there's also an increasing demand for transparency in the food supply chain. Enter blockchain: a decentralized ledger system that promises to trace every step of the journey, from farm to consumer's plate.   
-</p>
-
-
-    <h3>How Blockchain Helps:</h3>
-    <p><b>Traceability:</b>Consumers can track the origin of their food, knowing exactly where it came from and its journey to the store.</p>
-    <p>  <b> Reduction in Food Fraud:</b> With a transparent system, it becomes difficult for malicious actors to introduce counterfeit products.</p>
-        <p> <b> Faster Recall Processes:</b> In case of contamination or other issues, products can be traced and recalled faster, ensuring public safety.</p>
-
-                </div>
-
-            </div>
+            <div id='calendar'></div>
+              
         </div>
     </section>
+    
     <!-- //about 3grids section -->
 
     <!-- //testimonials section -->
@@ -128,7 +129,7 @@
                             yields for a sustainable future.</p>
                         <div class="columns-2 mt-4">
                             <ul class="social">
-                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="#facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li><a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
                                 </li>
@@ -184,11 +185,84 @@
         <span class="fas fa-level-up-alt" aria-hidden="true"></span>
     </button>
     <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+      
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialDate: '2023-09-12',
+            editable: true,
+            selectable: true,
+            businessHours: true,
+            dayMaxEvents: true, // allow "more" link when too many events
+            events: [
+              {
+                title: 'All Day Event',
+                start: '2023-09-01'
+              },
+              {
+                title: 'Long Event',
+                start: '2023-09-07',
+                end: '2023-09-10'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2023-09-09T16:00:00'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2023-09-16T16:00:00'
+              },
+              {
+                title: 'Conference',
+                start: '2023-09-11',
+                end: '2023-09-13'
+              },
+              {
+                title: 'Meeting',
+                start: '2023-09-12T10:30:00',
+                end: '2023-09-12T12:30:00'
+              },
+              {
+                title: 'Lunch',
+                start: '2023-09-12T12:00:00'
+              },
+              {
+                title: 'Meeting',
+                start: '2023-09-12T14:30:00'
+              },
+              {
+                title: 'Happy Hour',
+                start: '2023-09-12T17:30:00'
+              },
+              {
+                title: 'Dinner',
+                start: '2023-09-12T20:00:00'
+              },
+              {
+                title: 'Birthday Party',
+                start: '2023-09-13T07:00:00'
+              },
+              {
+                title: 'Farmplan',
+                url: 'https://www.farmplan.co.uk',
+                start: '2023-09-28'
+              }
+            ]
+          });
+      
+          calendar.render();
+        });
+      
+      </script>
+    <script>
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
         };
-
+       
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.getElementById("movetop").style.display = "block";
@@ -202,7 +276,30 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+        function submitForm() {
+            var form = document.getElementById('enrollmentForm');
+            
+            // Simple form validation
+            if (!form.checkValidity()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill out all required fields correctly.',
+                });
+                return;
+            }
 
+            // Assuming the form data is valid, you would send it to your server here using AJAX or another method
+            // For this example, we're just showing a success alert
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'You have successfully enrolled in the course.',
+            });
+            
+            // Optionally, you can reset the form after submission
+            // form.reset();
+        }
         function submitSubscribe(event) {
 
 event.preventDefault();
